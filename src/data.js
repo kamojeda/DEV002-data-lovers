@@ -6,9 +6,9 @@ export const showCharacterbyName = (data, cName) => {
 
 export const printCharacters = (data) => {
   return data.characters
-  .filter(character => character.house == "Gryffindor")
-  .map((character) => character.name)
-  .join("<br />");
+    .filter(character => character.house == "Gryffindor")
+    .map((character) => character.name)
+    .join("<br />");
 };
 
 export const printElements = (elements) => {
@@ -17,7 +17,7 @@ export const printElements = (elements) => {
 
 export const orderCharacters = (data) => {
   return data.characters
-  .reverse();
+    .reverse();
 };
 
 /*let characters = data.characters;
@@ -31,4 +31,3 @@ characters.sort(function (a, b) {
     // a must be equal to b
     return 0;
   });*/
-  

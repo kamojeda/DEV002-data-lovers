@@ -137,7 +137,7 @@ h2 {
 footer {
     width: 100%;
     height: 5%;
-    position:relative;
+    position: relative;
 }
 
 footer p {
@@ -224,7 +224,7 @@ nav ul li:hover ul {
     top: 70px;
 }
 
-nav ul li ul a{
+nav ul li ul a {
     display: block;
     color: var(--main-color);
     background-color: var(--titles-color);
@@ -235,12 +235,12 @@ nav ul li ul a{
     text-transform: uppercase;
 }
 
-nav ul li ul a{
-background: var(--main-color);
-color: var(--secondary-blue);
-transform: scale(1.1);
-padding-left: 30px;
-font-size: 14px;
+nav ul li ul a {
+    background: var(--main-color);
+    color: var(--secondary-blue);
+    transform: scale(1.1);
+    padding-left: 30px;
+    font-size: 14px;
 }
 
 ul, ol {
@@ -256,6 +256,7 @@ li p, a {
     max-width: 992px;
     padding: 10px 15px;
 }
+
 .characters-name {
     font-size: 20px;
     padding: 40px;
@@ -274,16 +275,14 @@ li p, a {
 }
 
 .card-element {
-    width:120px;
-    height: 120px;
-    border: solid 1px var(--titles-color);
-    border-radius: 40px;
-    margin: 10px;
-    text-align: center;
-    padding-top: 45px;
-    color: var(--titles-color);
-    font-family: var(--secondary-font);
     font-size: 15px;
+    padding: 10px 10px;
+    border: solid 3px;
+    line-height: 10px;
+    width: 50%;
+    color: var(--titles-color);
+    text-transform: uppercase;
+    border-radius: 10px;
 }
 
 .card-element:hover {
@@ -292,7 +291,7 @@ li p, a {
 }
 
 .card {
-    width:115px;
+    width: 115px;
     height: 115px;
     border: solid 1px var(--titles-color);
     border-radius: 40px;
