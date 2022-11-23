@@ -1,23 +1,184 @@
-import { example, anotherExample } from '../src/data.js';
+import {characters, createArrayObjects, filterCompare, filterAscendent, filterDescendent} from '../src/data.js';
+//import data from '../src/data/harrypotter/data.js';
+const data = 
+  {
+    characters: [
+      {
+        "id": 1,
+        "name": "Euan Abercrombie",
+        "birth": "between 1 September 1983 and 31 August 1984",
+        "death": null,
+        "species": "Human",
+        "ancestry": null,
+        "gender": "Male",
+        "hair_color": null,
+        "eye_color": null,
+        "wand": null,
+        "patronus": null,
+        "house": "Gryffindor",
+        "associated_groups": ["Hogwarts School of Witchcraft and Wizardry", "Gryffindor"],
+        "books_featured_in": [5]
+      },
+      {
+        "id": 231,
+        "name": "Silvanus Kettleburn",
+        "birth": "22 November, before 1927[citation needed]",
+        "death": "Between 2 May, 1998 and 22 November, 2014",
+        "species": "Human",
+        "ancestry": "Pure-blood or half-blood",
+        "gender": "Male",
+        "hair_color": "Silver",
+        "eye_color": "Brown",
+        "wand": "Chestnut and phoenix feather, 11½\", whippy",
+        "patronus": null,
+        "house": "Hufflepuff",
+        "associated_groups": ["Hogwarts School of Witchcraft and Wizardry", "Hufflepuff", "Kettleburn family"],
+        "books_featured_in": [3]
 
+      },
+      {
+        "id": 496,
+        "name": "Zoo director",
+        "birth": null,
+        "death": null,
+        "species": "Human",
+        "ancestry": "Muggle",
+        "gender": "Male",
+        "hair_color": null,
+        "eye_color": null,
+        "wand": null,
+        "patronus": null,
+        "house": null,
+        "associated_groups": ["Zoo"],
+        "books_featured_in": [1]
+      },
+      {
+        "id": 630,
+        "name": "Mafalda",
+        "birth": "between 1 September 1982 and 31 August 1983, Great Britain or Ireland",
+        "death": null,
+        "species": "Human",
+        "ancestry": "Muggle-born or Half-blood (possibly)",
+        "gender": "Female",
+        "hair_color": null,
+        "eye_color": null,
+        "wand": null,
+        "patronus": null,
+        "house": "Slytherin",
+        "associated_groups": ["Prewett family", "Weasley Family", "Slytherin", "Hogwarts School of Witchcraft and Wizardry"],
+        "books_featured_in": [4]
+      }
+    ]
+  }
 
-describe('example', () => {
+  const array = [
+    {
+      house: 'Gryffindor' ,
+      name: "Euan Abercrombie"
+    },
+    {
+      house: "Hufflepuff",
+      name: "Silvanus Kettleburn"
+    },
+    {
+      house: null,
+      name: "Zoo director"
+    },
+    {
+      house: "Slytherin",
+      name: "Mafalda"
+    }
+  ]
+
+describe('characters', () => {
   it('is a function', () => {
-    expect(typeof example).toBe('function');
+    expect(typeof(characters)).toBe('function');
   });
 
-  it('returns `example`', () => {
-    expect(example()).toBe('example');
+  it('should return an array of objects', () => {
+    expect(characters(data)).toEqual(expect.arrayContaining([]))
+  })
+
+  it('should throw TypeError when invoked with wrong argument types', () => {
+    expect(() => characters(undefined)).toThrow(TypeError);
+    expect(() => characters(null)).toThrow(TypeError);
+    // expect(() => characters([''])).toThrow(TypeError);
+  })  
+});
+
+describe ('createArrayObjects', () => {
+  it('is a function', () => {
+    expect(typeof(createArrayObjects)).toBe('function')
   });
+
+  it('should return an array of objects with name and house properties only', () => {
+    expect(createArrayObjects(data)).toEqual(expect.arrayContaining([expect.objectContaining ({
+      name: expect.any(String),
+      house: expect.any(String),
+    })]))
+});
+
+  it('should throw TypeError when invoked with wrong argument types', () => {
+    expect(() => createArrayObjects(undefined)).toThrow(TypeError);
+    expect(() => createArrayObjects(null)).toThrow(TypeError);
+  })
+});
+
+describe ('filterCompare', () => {
+  it('is a function', () => {
+    expect(typeof(filterCompare)).toBe('function')
+  });
+
+  it('should compare every element of an array with an string', () => {
+    expect(filterCompare(array, 'euan')).toEqual(expect.arrayContaining([expect.objectContaining(
+      {
+        house: 'Gryffindor' ,
+        name: "Euan Abercrombie"
+      }
+    )]))
+
+    expect(filterCompare(array, 'ZOO')).toEqual(expect.arrayContaining([expect.objectContaining(
+      {
+        house: null,
+        name: "Zoo director"
+      }
+    )]))
+  });
+
+  it('should throw TypeError when invoked with wrong argument types', () => {
+    expect(() => filterCompare(undefined,0)).toThrow(TypeError);
+    expect(() => filterCompare(null,null)).toThrow(TypeError);
+  })
+});
+
+describe ('filterAscendent', () => {
+  it('is a function', () => {
+    expect(typeof(filterAscendent)).toBe('function')
+  });
+
+  it('should return ascendent ordered array ', () => {
+    expect(filterAscendent(array)).toBeSorted();
+  })
+
+  it('should throw TypeError when invoked with wrong argument types', () => {
+    expect(() => filterAscendent(undefined)).toThrow(TypeError);
+    expect(() => filterAscendent(null)).toThrow(TypeError);
+  })
+});
+
+describe ('filterDescendent', () => {
+  it('is a function', () => {
+    expect(typeof(filterDescendent)).toBe('function')
+  });
+
+  it('should return descendent ordered array ', () => {
+    expect(filterDescendent(array)).toBeSorted({descending: true });
+  })
+
+  it('should throw TypeError when invoked with wrong argument types', () => {
+    expect(() => filterDescendent(undefined)).toThrow(TypeError);
+    expect(() => filterDescendent(null)).toThrow(TypeError);
+  })
 });
 
 
-describe('anotherExample', () => {
-  it('is a function', () => {
-    expect(typeof anotherExample).toBe('function');
-  });
-
-  it('returns `anotherExample`', () => {
-    expect(anotherExample()).toBe('OMG');
-  });
-});
