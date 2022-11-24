@@ -3,16 +3,12 @@ export const characters = (data) => {
     throw new TypeError('data is undefined')
   } else if (data === null) {
     throw new TypeError('data is null')
-  // } else if (data === ['']) {
-  //   throw new TypeError('data is empty')
   } else {
     return(data.characters);
   }
-  // return(data.characters.filter(element => element.name));
 }
 
 export const createArrayObjects = (data) => {
-  // let filtered = data.characters.filter(element => element.name);
   if (data === undefined) {
     throw new TypeError('data is undefined')
   } else if (data === null) {
@@ -20,7 +16,6 @@ export const createArrayObjects = (data) => {
   } else {
     let filtered = data.characters;
     let finalArray = filtered.map( (element) => ({name: element.name, house: element.house}))
-  
     return finalArray;
   }
 };
@@ -58,7 +53,6 @@ export const filterDescendent = (array) => {
   let descendent = array.sort(function(a, b) {
     return((a.name < b.name)? 1: ((a.name > b.name)? -1: 0));
     })
-
     return descendent;
   }
 }

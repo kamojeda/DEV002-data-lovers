@@ -188,10 +188,6 @@ describe('characters', () => {
     expect(typeof(characters)).toBe('function');
   });
 
-  // it('should return an array of objects', () => {
-  //   expect(characters(data)).toEqual(expect.arrayContaining([]))
-  // })
-
   it('should return array length 5', () => {
     expect(characters(data)).toHaveLength(5);
   })
@@ -199,11 +195,10 @@ describe('characters', () => {
   it('should throw TypeError when invoked with wrong argument types', () => {
     expect(() => characters(undefined)).toThrow(TypeError);
     expect(() => characters(null)).toThrow(TypeError);
-    // expect(() => characters([''])).toThrow(TypeError);
   })
 });
 
-describe ('createArrayObjects', () => {
+describe('createArrayObjects', () => {
   it('is a function', () => {
     expect(typeof(createArrayObjects)).toBe('function')
   });
@@ -216,9 +211,9 @@ describe ('createArrayObjects', () => {
       {"house": undefined, "name": "Aged witch" },
       {"house": "Slytherin", "name": "Mafalda"},
     ])
-});
+  });
+})
 
-<<<<<<< HEAD
 describe("filter characters in ascendent sort", () => {
   test("sort list", () => {
     //given
@@ -287,15 +282,7 @@ describe("filter characters in ascendent sort", () => {
     expect(result).toStrictEqual(expectedArrayData.characters);
     expect(() => filterDescendent(undefined)).toThrow(TypeError);
     expect(() => filterDescendent(null)).toThrow(TypeError);
-=======
-//   it('should return an array of objects with name and house properties only', () => {
-//     expect(createArrayObjects(data)).toEqual(expect.arrayContaining([expect.objectContaining ({
-//       name: expect.any(String),
-//       house: expect.any(String)
-//     })]))
-// });
 
->>>>>>> Se agregan test a la funcion de createArrayObject y filterCompare
   it('should throw TypeError when invoked with wrong argument types', () => {
     expect(() => createArrayObjects(undefined)).toThrow(TypeError);
     expect(() => createArrayObjects(null)).toThrow(TypeError);
@@ -308,21 +295,21 @@ describe ('filterCompare', () => {
   });
 
   it('should compare every element of an array with an string', () => {
-    expect(filterCompare(array, 'euan')).toEqual(expect.arrayContaining([expect.objectContaining(
+    expect(filterCompare(array, 'euan')).toEqual([
       {
         house: 'Gryffindor' ,
         name: "Euan Abercrombie"
       }
-    )]))
+    ])
 
-    expect(filterCompare(array, 'ZOO')).toEqual(expect.arrayContaining([expect.objectContaining(
+    expect(filterCompare(array, 'ZOO')).toEqual(
+      [
       {
         house: null,
         name: "Zoo director"
       }
-    )]))
+      ])
     
-    console.log(filterCompare(array, 'A'))
     expect(filterCompare(array, 'A')).toMatchObject([
       {house: "Gryffindor",name: "Euan Abercrombie"}, 
       {house: "Hufflepuff", name: "Silvanus Kettleburn"},
@@ -365,4 +352,6 @@ describe ('filterDescendent', () => {
     expect(() => filterDescendent(undefined)).toThrow(TypeError);
     expect(() => filterDescendent(null)).toThrow(TypeError);
   })
+});
+
 });
