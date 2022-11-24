@@ -66,6 +66,7 @@ orderDescendent.addEventListener("click", () => {
 
 searchClose.addEventListener("click", ()=> {
     searchInput.value = '';
+    console.log(characters(data));
     listElements(characters(data));
 });
 
