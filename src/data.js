@@ -32,15 +32,27 @@ export const filterCompare = (array, cName) => {
 }
 
 export const filterAscendent = (array) => {
-  let ascendent = array.sort(function(a, b) {
-    return((a.name < b.name)? -1: ((a.name > b.name)? 1: 0));
+  if (array === undefined) {
+    throw new TypeError('data is undefined')
+  } else if (array === null) {
+    throw new TypeError('null values')
+  } else {
+    let ascendent = array.sort(function(a, b) {
+      return((a.name < b.name)? -1: ((a.name > b.name)? 1: 0));
     })
-    return ascendent;
+  return ascendent;
+}
 }
 
 export const filterDescendent = (array) => {
-  let descendent = array.sort(function(a, b) {
-    return((a.name < b.name)? 1: ((a.name > b.name)? -1: 0));
-    })
-    return descendent;
+  if (array === undefined) {
+    throw new TypeError('data is undefined')
+  } else if (array === null) {
+    throw new TypeError('null values')
+  } else {
+    let descendent = array.sort(function(a, b) {
+      return((a.name < b.name)? 1: ((a.name > b.name)? -1: 0));
+      })
+      return descendent;
+  }
 }
