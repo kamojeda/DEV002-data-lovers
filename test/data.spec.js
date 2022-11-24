@@ -1,77 +1,5 @@
 import {characters, createArrayObjects, filterCompare, filterAscendent, filterDescendent} from '../src/data.js';
 
-describe("filter characters in ascendent sort", () => {
-  test("sort list", () => {
-    //given
-    const arrayData = {
-      characters: [
-        {
-          house: "Gryffindor",
-          name: "Euan Abercrombie",
-        },
-        {
-          house: "Ravenclaw",
-          name: "Stewart Ackerley",
-        },
-        {
-          house: null,
-          name: "African prince",
-        },
-        {
-          house: null,
-          name: "Agnes's son",
-        },
-        {
-          house: null,
-          name: "Cornelius Agrippa",
-        },
-        {
-          house: null,
-          name: "Albino peacock",
-        },
-      ],
-    };
-
-    const expectedArrayData = {
-      characters: [
-        {
-          house: null,
-          name: "African prince",
-        },
-        {
-          house: null,
-          name: "Agnes's son",
-        },
-        {
-          house: null,
-          name: "Albino peacock",
-        },
-        {
-          house: null,
-          name: "Cornelius Agrippa",
-        },
-        {
-          house: "Gryffindor",
-          name: "Euan Abercrombie",
-        },
-        {
-          house: "Ravenclaw",
-          name: "Stewart Ackerley",
-        },
-      ],
-    };
-
-    //when
-    let result = filterAscendent(arrayData.characters);
-
-    //then
-    expect(result).toStrictEqual(expectedArrayData.characters);
-    expect(() => filterAscendent(undefined)).toThrow(TypeError);
-    expect(() => filterAscendent(null)).toThrow(TypeError);
-//import data from '../src/data/harrypotter/data.js';
-  });
-});
-
 const data = 
   {
     characters: [
@@ -212,9 +140,122 @@ describe('createArrayObjects', () => {
       {"house": "Slytherin", "name": "Mafalda"},
     ])
   });
-})
+
+  it('should throw TypeError when invoked with wrong argument types', () => {
+    expect(() => createArrayObjects(undefined)).toThrow(TypeError);
+    expect(() => createArrayObjects(null)).toThrow(TypeError);
+  })
+
+});
+
+describe ('filterCompare', () => {
+  it('is a function', () => {
+    expect(typeof(filterCompare)).toBe('function')
+  });
+
+  it('should compare every element of an array with an string', () => {
+    expect(filterCompare(array, 'euan')).toEqual([
+      {
+        house: 'Gryffindor' ,
+        name: "Euan Abercrombie"
+      }
+    ])
+
+    expect(filterCompare(array, 'ZOO')).toEqual(
+      [
+      {
+        house: null,
+        name: "Zoo director"
+      }
+      ])
+    
+    expect(filterCompare(array, 'A')).toMatchObject([
+      {house: "Gryffindor",name: "Euan Abercrombie"}, 
+      {house: "Hufflepuff", name: "Silvanus Kettleburn"},
+      {house: undefined, name: "Aged witch" },
+      {house: "Slytherin", name: "Mafalda"}
+    ])
+  });
+
+  it('should throw TypeError when invoked with wrong argument types', () => {
+    expect(() => filterCompare(undefined,0)).toThrow(TypeError);
+    expect(() => filterCompare(null,null)).toThrow(TypeError);
+  })
+});
 
 describe("filter characters in ascendent sort", () => {
+  test("sort list", () => {
+    //given
+    const arrayData = {
+      characters: [
+        {
+          house: "Gryffindor",
+          name: "Euan Abercrombie",
+        },
+        {
+          house: "Ravenclaw",
+          name: "Stewart Ackerley",
+        },
+        {
+          house: null,
+          name: "African prince",
+        },
+        {
+          house: null,
+          name: "Agnes's son",
+        },
+        {
+          house: null,
+          name: "Cornelius Agrippa",
+        },
+        {
+          house: null,
+          name: "Albino peacock",
+        },
+      ],
+    };
+
+    const expectedArrayData = {
+      characters: [
+        {
+          house: null,
+          name: "African prince",
+        },
+        {
+          house: null,
+          name: "Agnes's son",
+        },
+        {
+          house: null,
+          name: "Albino peacock",
+        },
+        {
+          house: null,
+          name: "Cornelius Agrippa",
+        },
+        {
+          house: "Gryffindor",
+          name: "Euan Abercrombie",
+        },
+        {
+          house: "Ravenclaw",
+          name: "Stewart Ackerley",
+        },
+      ],
+    };
+
+    //when
+    let result = filterAscendent(arrayData.characters);
+
+    //then
+    expect(result).toStrictEqual(expectedArrayData.characters);
+    expect(() => filterAscendent(undefined)).toThrow(TypeError);
+    expect(() => filterAscendent(null)).toThrow(TypeError);
+//import data from '../src/data/harrypotter/data.js';
+  });
+});
+
+describe("filter characters in descendent sort", () => {
   test("sort list", () => {
     //given
     const arrayData = {
@@ -282,76 +323,5 @@ describe("filter characters in ascendent sort", () => {
     expect(result).toStrictEqual(expectedArrayData.characters);
     expect(() => filterDescendent(undefined)).toThrow(TypeError);
     expect(() => filterDescendent(null)).toThrow(TypeError);
-
-  it('should throw TypeError when invoked with wrong argument types', () => {
-    expect(() => createArrayObjects(undefined)).toThrow(TypeError);
-    expect(() => createArrayObjects(null)).toThrow(TypeError);
-  })
-});
-
-describe ('filterCompare', () => {
-  it('is a function', () => {
-    expect(typeof(filterCompare)).toBe('function')
   });
-
-  it('should compare every element of an array with an string', () => {
-    expect(filterCompare(array, 'euan')).toEqual([
-      {
-        house: 'Gryffindor' ,
-        name: "Euan Abercrombie"
-      }
-    ])
-
-    expect(filterCompare(array, 'ZOO')).toEqual(
-      [
-      {
-        house: null,
-        name: "Zoo director"
-      }
-      ])
-    
-    expect(filterCompare(array, 'A')).toMatchObject([
-      {house: "Gryffindor",name: "Euan Abercrombie"}, 
-      {house: "Hufflepuff", name: "Silvanus Kettleburn"},
-      {house: undefined, name: "Aged witch" },
-      {house: "Slytherin", name: "Mafalda"}
-    ])
-  });
-
-  it('should throw TypeError when invoked with wrong argument types', () => {
-    expect(() => filterCompare(undefined,0)).toThrow(TypeError);
-    expect(() => filterCompare(null,null)).toThrow(TypeError);
-  })
-});
-
-describe ('filterAscendent', () => {
-  it('is a function', () => {
-    expect(typeof(filterAscendent)).toBe('function')
-  });
-
-  it('should return ascendent ordered array ', () => {
-    expect(filterAscendent(array)).toEqual(expect.toBeSorted());
-  })
-
-  it('should throw TypeError when invoked with wrong argument types', () => {
-    expect(() => filterAscendent(undefined)).toThrow(TypeError);
-    expect(() => filterAscendent(null)).toThrow(TypeError);
-  })
-});
-
-describe ('filterDescendent', () => {
-  it('is a function', () => {
-    expect(typeof(filterDescendent)).toBe('function')
-  });
-
-  it('should return descendent ordered array ', () => {
-    expect(filterDescendent(array)).toBeSorted({descending: true });
-  })
-
-  it('should throw TypeError when invoked with wrong argument types', () => {
-    expect(() => filterDescendent(undefined)).toThrow(TypeError);
-    expect(() => filterDescendent(null)).toThrow(TypeError);
-  })
-});
-
 });
