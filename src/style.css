@@ -93,6 +93,49 @@ h2 {
   background-size: contain;
 }
 
+.button-wraper {
+  height: auto;
+  width: 90%;
+  max-width: 400px;
+  min-width: 250px;
+  background: transparent;
+  margin: 5px auto;
+  position: static;
+}
+
+.see-all-characters {
+  height: auto;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+  margin-top: -10px;
+  padding: 10px 20px;
+  border-radius: 30px;
+  border: none;
+  color: var(--gryffindor-color);
+  background-color: var(--hufflepuff-color);
+  font-family: var(--secondary-font);
+  font-size: 22px;
+}
+  /* display: flex;
+  height: auto;
+  width: auto;
+  padding: 13px 80px;
+  position: relative;
+  margin-top: -10px;
+  margin-left: auto;
+  margin-right:auto;
+  text-align: center;
+}
+*/
+
+/* .see-all-characters:hover {
+  font-size: 25px;
+  transform: scale(1, 1);
+  cursor: pointer;
+} */
+
 .search-wrapper {
   height: auto;
   width: 90%;
@@ -160,23 +203,27 @@ h2 {
 footer {
     width: 100%;
     height: 10%;
-    left: 0;
-    bottom: 0;
+    bottom: 0px;
     position:relative;
+}
+
+footer div {
+  position: absolute;
+  padding-bottom: 10px;
+  bottom: 5px;
+  width: 100%;
 }
 
 footer p {
     text-align: center;
-    padding-top: 18px;
     font-family: var(--secondary-font);
-    font-size: 18px;
+    font-size: 16px;
     font-weight: lighter;
-    color: var(--titles-color);
+    color: var(--content-color);
 }
 
 .container-menu {
   width: 100%;
-  padding: 10px auto;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -210,7 +257,7 @@ nav > ul > li > div > a {
   height: 100%;
   width: 120px;
   max-width: 992px;
-  margin: 0 30px;
+  /* margin: 0 10px; */
   padding: 5px 15px;
   display: flex;
   flex-direction: column;
@@ -344,28 +391,32 @@ nav ul li ul a:hover {
   font-size: bold 15px;
 }
 
-.see-all-characters {
-  display: flex;
-  height: auto;
-  width: auto;
-  padding: 13px 80px;
-  position: relative;
-  margin-top: -10px;
-  margin-left: auto;
-  margin-right:auto;
-  border-radius: 30px;
-  border: none;
-  color: var(--gryffindor-color);
-  background-color: var(--hufflepuff-color);
-  font-family: var(--secondary-font);
-  font-size: 22px;
-  text-align: center;
-}
+@media only screen and (max-width: 700px) {
+  .description-text {
+    margin: 10px 10%;
+    font-size: 20px;
+  }
 
-.see-all-characters:hover {
-  font-size: 25px;
-  transform: scale(1, 1);
-  cursor: pointer;
+  .description-image {
+    width: 50%;
+    height: 50%;
+  }
+
+  .see-all-characters {
+    font-size: 18px;
+  }
+
+  nav > ul > li > div > a {
+    width: 90px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    font-size: 20px;
+  }
+
+
+  footer div p {
+    font-size: 12px;
+  }
 }
 
 @media only screen and (max-width: 500px) {
@@ -392,8 +443,8 @@ nav ul li ul a:hover {
   }
 
   .description-text {
+    margin: 5px 10%;
     font-size: 15px;
-    padding: 3px 13px;
   }
 
   .description-image {
@@ -405,19 +456,21 @@ nav ul li ul a:hover {
   }
 
   .see-all-characters {
-    height: auto;
-    width: auto;
-    padding: 10px 60px;
-    margin: 25px auto;
-    font-size: 15px;
+    width: 70%;
+    height: 30px;
+    padding: 8px 30px;
+    margin: 5px auto;
     display: flex;
-  margin-top: -15px;
+    margin-top: -10px;
+  } 
 
+  .see-all-characters p {
+    margin: 0 auto;
+    font-size: 14px;
   }
 
-  .see-all-characters:hover {
-    font-size: 17px;
-    margin: 0 auto;
+  .see-all-characters :hover {
+    font-size: 18px; 
     transform: scale(1, 1);
     cursor: pointer;
   }
@@ -439,14 +492,15 @@ nav ul li ul a:hover {
   }
 
   .nav-menu {
-    max-width: 1000px;
+    /* max-width: 1000px; */
+    max-width: 400px;
     margin: 10px;
     height: 50%;
   }
 
   nav > ul > li > div > a {
-    width: 90px;
-    max-width: 992px;
+    width: 75px;
+    /* max-width: 992px; */
     margin: 0 auto;
     padding: 10px 5px;
     font-size: 17px;
@@ -495,4 +549,43 @@ nav ul li ul a:hover {
   .card-p:hover {
     font-size: bold 12px;
   }
+
+  footer div p {
+    padding: 0;
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+
+  .description-text {
+    display: none;
+  }
+
+  .see-all-characters {
+    padding: 8px 25px;
+}
+
+  .nav-menu {
+    max-width: 300px;
+    margin: 5px;
+  }
+
+  nav > ul > li > div > a {
+    width: 65px;
+    margin: 0 auto;
+    padding: 5px;
+    font-size: 12px;
+}
+
+  footer div {
+    bottom: 0;
+    padding-bottom: 0px;
+  }
+
+  footer div p {
+    padding: 0;
+    font-size: 10px;
+  }
+
 }
