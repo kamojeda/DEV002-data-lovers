@@ -5,6 +5,7 @@ const searchInput = document.getElementById('search-character');
 const searchClose = document.getElementById("search-closeButton");
 const seeCharactersButton = document.getElementById("see all characters");
 
+let statsSection = document.getElementById('stats-info');
 let list = document.getElementById("characteresList");
 let orderAscendent = document.getElementById("filterAscendent");
 let orderDescendent = document.getElementById("filterDescendent");
@@ -16,11 +17,14 @@ searchInput.addEventListener('keyup', searchRealTime);
 let charactersNameHouse = createArrayObjects(data);
 
 function listElements(elements) {
+    let stats = 0;
     elements.forEach((element) => {
         let  li = document.createElement('li');
         let span = document.createElement('span');
         let i = document.createElement('i')
         let p = document.createElement('p');
+
+        stats = stats + 1;
     
         li.className = 'card-element'
         p.innerHTML = element.name;
@@ -46,6 +50,12 @@ function listElements(elements) {
         span.appendChild(i);
         li.appendChild(p);
     })
+
+    statsSection.innerHTML = '';
+    statsSection.innerHTML = 
+    `<div class = "stats-info">
+        <p> ${stats} characters found</p>
+    </div>`
 }
 
 function searchRealTime() {
