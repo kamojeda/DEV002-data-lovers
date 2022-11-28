@@ -12,7 +12,6 @@ let orderDescendent = document.getElementById("filterDescendent");
 searchClose.addEventListener('click', closeSearch);
 searchInput.addEventListener('keyup', searchRealTime);
 
-
 let charactersNameHouse = createArrayObjects(data);
 
 function listElements(elements) {
@@ -52,6 +51,7 @@ function searchRealTime() {
     let cName = searchInput.value;
     list.innerHTML = '';
     listElements(filterCompare(charactersNameHouse, cName));
+    console.log(filterCompare(charactersNameHouse, cName).length);
 }
 
 orderAscendent.addEventListener("click", () => {

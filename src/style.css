@@ -391,6 +391,22 @@ nav ul li ul a:hover {
   font-size: bold 15px;
 }
 
+.contador{
+height: 200px;
+width: 60%;
+display: flex;
+align-items: center;
+}
+.contador-personajes-buscados{
+  height: 160px;
+  width: 170px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--secondary-font);
+}
+
 @media only screen and (max-width: 700px) {
   .description-text {
     margin: 10px 10%;
