@@ -146,6 +146,13 @@ Luego de varias horas, nuestros primeros prototipos en [Figma](https://www.figma
 * Pantalla Books / Pantalla Libro 1
 ![Prototipo en Figma de: Pantalla Books/Libro 1](./imgREADME/prototype2.PNG)
 
+* **Feedback**:
+    1. Se puede mejorar las cards, para que sean más llamativas.
+    2. El color de los menús.
+    3. El color del logo no va con la temática del diseño.
+
+     * Pantalla Books / Pantalla Libro 1
+![Prototipo en Figma de: Pantalla Books/Libro 1](./imgREADME/Characters_prtotype.PNG)
 ## **5. Flujo de trabajo Git y GitHub**
 LLegado el momento de iniciar con el códgio, nos enfrentamos a un nuevo reto, hacer código juntas.
 El reto principal fue organizar nuestro flujo de trabajo usando las herramientas como git y github. Esto ha sido un ir y venir lleno de aprendizajes, muchos errores y conflictos, después de iterar, investigar y probar, acordamos seguir el siguiente flujo:
@@ -158,9 +165,9 @@ El reto principal fue organizar nuestro flujo de trabajo usando las herramientas
 
 
 ## **6. Historia de Usuario 1**
-Reflexionando acerca de la Historia de Usuario, nos dimos cuenta que para entregar algo funcional y no perder tiempo, solo era necesario empezar con la pantalla Characters, dado que solo nos concentraríamos en filtrar la data de este array **Characters** en especifico.
+Reflexionando acerca de la Historia de Usuario, nos dimos cuenta que para entregar algo funcional y no perder tiempo, era necesario empezar con la pantalla Characters, dado que solo nos concentraríamos en filtrar la data de este array **Characters** en especifico.
 
-![](./imgREADME/Characters_prototype.PNG)
+![](./imgREADME/Prototipo_alta.PNG)
 
 
 ## Visualmente (HTML y CSS)
