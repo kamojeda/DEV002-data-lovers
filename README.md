@@ -39,7 +39,7 @@ Los datos contenidos en el sitio están **basados estrictamente en los libros**,
 
 ***
 
-### **1. Primeros pasos**
+## **1. Primeros pasos**
 * **Presentación**
 
 Este proyecto se trabajó en duplas, por lo que antes de empezar a trabajar, nos presentamos. 
@@ -58,7 +58,7 @@ Este fue un tema clave tambien para empezar, usabamos herramientas distintas par
 
 Elegimos trabajar con la data de ***✨Harry Potter✨*** ya que ambas estamos mas familiarizadas con el tema y nos interesó conocer mas acerca de los datos contenidos en los libros .
 
-### **2. Investigación**
+## **2. Investigación**
 En este paso nos apoyamos de la información contenida en el repositorio original del proyecto. Adicional nos dimos a la tarea de invesigar en redes sociales tales como **Facebook** y **YouTube** sobre qué hablan o esciben los y las fans de esta saga, las preguntas base fueron las siguientes:
 
 - ¿Quiénes son los principales usuarios de producto?
@@ -72,7 +72,7 @@ Cabe mencionar que nos encontramos con algunos sitios ya existentes que nos ayud
 * [wizardingworld.com](https://www.wizardingworld.com/)
 * [startingharrypotter.com](https://www.startingharrypotter.com/)
 
-### **3. Historias de Usuario**
+## **3. Historias de Usuario**
 En esta parte del proceso nos encontramos con una actividad desconocida, fue de los partes que nos llevo mas tiempo construir. 
 
 De incio nos documentamos de manera individual y revisiones en conjunto sobre el tema de la creacion de historias de usuario, criterios de aceptación, definición de terminado y división de historias de usuario en tareas. Las fuentes de las que nos apoyaron fueron, principalmente videos de YouTube y la guía que nos proporcionó Laboratoria:
@@ -114,6 +114,8 @@ Buscando un poco de inspiración en sitios como Pinterest, los colores base fuer
     --main-color: #212342;
     --secondary-blue: #4E4C75;
     --titles-color: #C2B091;
+    --content-color: #fff1d9;
+    --secundary-color: #e8e9f8;
 
 Los colores adicionales elegidos para relacionarlos con cada casa de estudio de Hogwarts fueron:
 
@@ -144,7 +146,14 @@ Luego de varias horas, nuestros primeros prototipos en [Figma](https://www.figma
 * Pantalla Books / Pantalla Libro 1
 ![Prototipo en Figma de: Pantalla Books/Libro 1](./imgREADME/prototype2.PNG)
 
-### **5. Flujo de trabajo Git y GitHub**
+* **Feedback**:
+    1. Se puede mejorar las cards, para que sean más llamativas.
+    2. El color de los menús.
+    3. El color del logo no va con la temática del diseño.
+
+     * Pantalla Books / Pantalla Libro 1
+![Prototipo en Figma de: Pantalla Books/Libro 1](./imgREADME/Prototipo_alta.PNG)
+## **5. Flujo de trabajo Git y GitHub**
 LLegado el momento de iniciar con el códgio, nos enfrentamos a un nuevo reto, hacer código juntas.
 El reto principal fue organizar nuestro flujo de trabajo usando las herramientas como git y github. Esto ha sido un ir y venir lleno de aprendizajes, muchos errores y conflictos, después de iterar, investigar y probar, acordamos seguir el siguiente flujo:
 
@@ -155,17 +164,29 @@ El reto principal fue organizar nuestro flujo de trabajo usando las herramientas
 ![](./imgREADME/flujo%20de%20trabajo_DL2_beresdev.jpg)
 
 
-### **6. Historia de Usuario 1**
-Reflexionando acerca de la Historia de Usuario, nos dimos cuenta que para entregar algo funcional y no perder tiempo, solo era necesario empezar con la pantalla Characters, dado que solo nos concentraríamos en filtrar la data de este array **Characters** en especifico.
+## **6. Historia de Usuario 1**
+Reflexionando acerca de la Historia de Usuario, nos dimos cuenta que para entregar algo funcional y no perder tiempo, era necesario empezar con la pantalla Characters, dado que solo nos concentraríamos en filtrar la data de este array **Characters** en especifico.
 
-![](./imgREADME/Characters_prototype.PNG)
+![](./imgREADME/Prototipo_alta.PNG)
 
 
-* ***Maquetación***
+## Visualmente (HTML y CSS)
 
-Nos aseguramos de usar HTML semántico
+### `src/index.html`
 
-* ***Estilos***
+En este archivo va el contenido que se mostrará al usuario (la maquetación).
+* Dentro de la etiqueta `<body>` están 3 etiquetas principales
+    - `<header>`: la nav bar principal y logo.
+    - `<main>`: contenido principal del proyecto.
+    - `<footer>`: pie de página del proyecto.
+* Dentro de la etiqueta `<main>` están 5 secciones que permiten estructurar la página.
+    - `<section class="text-img-details">`: contiene la descripción del tema a filtrar.
+    - `<section class="button-see-all-characters">`: contiene un botón para visualizar los elementos en pantalla.
+    - `<section class="search-wrapper">`: contiene el buscador de elementos.
+    - `<section class="container-menu">`: contiene la barra de menú desplegable de opciones de filtrado.
+    - `<section class="cards">`: contiene la lista de elementos.
+
+### `src/style.css`
 
 Reseteamos estilos y definimos variables, tanto para colores como para fuentes:
 
@@ -190,13 +211,15 @@ Reseteamos estilos y definimos variables, tanto para colores como para fuentes:
 
 ````
 Nos apoyamos con Flexbox para el tema del diseño responsivo y el acomodo de las cards que contienen el nombre de cada personaje.
+Utilizamos mediaqueries para pantallas de: 
 
 
-* ***Manejo de la data con JavaScript***
+
+## Funcionalmente (JavaScript - pruebas unitarias)
 
 Tal como lo indica el README del proyecto, dividimos el código JavaScript en 2 archivos:
-
-* **data.js**: donde se encuentran las funciones de filtrado de la data.
+### `src/data.js`
+Donde se encuentran las funciones de filtrado de la data.
 
 Ejemplos:
 
@@ -207,7 +230,8 @@ export const characters = (data) => {
 
 ```
 
-* **main.js**: aqui mandamos llamar las funciones creadas en data.js y manipulamos el DOM para presentar esa información en la UI.
+### `src/main.js`
+Aqui mandamos llamar las funciones creadas en *data.js* y manipulamos el DOM para presentar esa información en la UI.
 
 ```
 function listElements(elements) {
