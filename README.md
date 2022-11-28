@@ -152,7 +152,7 @@ Luego de varias horas, nuestros primeros prototipos en [Figma](https://www.figma
     3. El color del logo no va con la temática del diseño.
 
      * Pantalla Books / Pantalla Libro 1
-![Prototipo en Figma de: Pantalla Books/Libro 1](./imgREADME/Characters_prtotype.PNG)
+![Prototipo en Figma de: Pantalla Books/Libro 1](./imgREADME/Prototipo_alta.PNG)
 ## **5. Flujo de trabajo Git y GitHub**
 LLegado el momento de iniciar con el códgio, nos enfrentamos a un nuevo reto, hacer código juntas.
 El reto principal fue organizar nuestro flujo de trabajo usando las herramientas como git y github. Esto ha sido un ir y venir lleno de aprendizajes, muchos errores y conflictos, después de iterar, investigar y probar, acordamos seguir el siguiente flujo:
