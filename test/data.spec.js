@@ -132,12 +132,12 @@ describe('createArrayObjects', () => {
   });
 
   it('should return an array of objects with name and house properties only even if a property does not exist', () => {
-    expect(createArrayObjects(data)).toMatchObject ([
-      {"house": "Gryffindor", "name": "Euan Abercrombie"}, 
-      {"house": "Hufflepuff", "name": "Silvanus Kettleburn"}, 
-      {"house": null, "name": "Zoo director"}, 
-      {"house": undefined, "name": "Aged witch" },
-      {"house": "Slytherin", "name": "Mafalda"},
+    expect(createArrayObjects(data)).toEqual ([
+      {"gender":"Male", "house": "Gryffindor", "name": "Euan Abercrombie"}, 
+      {"gender":"Male","house": "Hufflepuff", "name": "Silvanus Kettleburn"}, 
+      {"gender":"Male","house": null, "name": "Zoo director"}, 
+      {"gender":"Female","house": undefined, "name": "Aged witch" },
+      {"gender":"Female","house": "Slytherin", "name": "Mafalda"},
     ])
   });
 
@@ -184,6 +184,10 @@ describe ('filterCompare', () => {
 });
 
 describe("filter characters in ascendent sort", () => {
+  test("is function", () => {
+    expect(typeof(filterAscendent)).toBe('function');
+  });
+
   test("sort list", () => {
     //given
     const arrayData = {
@@ -249,13 +253,19 @@ describe("filter characters in ascendent sort", () => {
 
     //then
     expect(result).toStrictEqual(expectedArrayData.characters);
+  });
+
+  test("should throw TypeError when invoked with wrong argument types", ()=> {
     expect(() => filterAscendent(undefined)).toThrow(TypeError);
     expect(() => filterAscendent(null)).toThrow(TypeError);
-//import data from '../src/data/harrypotter/data.js';
-  });
+  })
 });
 
 describe("filter characters in descendent sort", () => {
+  test("is function", () => {
+    expect(typeof(filterDescendent)).toBe('function');
+  });
+
   test("sort list", () => {
     //given
     const arrayData = {
@@ -324,6 +334,11 @@ describe("filter characters in descendent sort", () => {
     expect(() => filterDescendent(undefined)).toThrow(TypeError);
     expect(() => filterDescendent(null)).toThrow(TypeError);
   });
+
+  test("should throw TypeError when invoked with wrong argument types", ()=> {
+    expect(() => filterDescendent(undefined)).toThrow(TypeError);
+    expect(() => filterDescendent(null)).toThrow(TypeError);
+  })
 });
 
 describe ("countMale", () => {

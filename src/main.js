@@ -14,7 +14,7 @@ const searchInput = document.getElementById("search-character");
 const clean = document.getElementById("clean-button");
 const seeCharactersButton = document.getElementById("see all characters");
 
-let statsSection = document.getElementById("main-counter");
+let totalSection = document.getElementById("main-counter");
 let maleSection = document.getElementById("male-counter");
 let femaleSection = document.getElementById("female-counter");
 let list = document.getElementById("characteresList");
@@ -89,13 +89,16 @@ function searchRealTime() {
 }
 
 function cleanDisplay() {
+    totalSection.innerHTML = "";
+    maleSection.innerHTML = "";
+    femaleSection.innerHTML = "";
     searchInput.value = "";
     list.innerHTML = "";
 }
 
 function printTotalAmountCharacters(amount) {
-    statsSection.innerHTML = "";
-    statsSection.innerHTML = `<div class = "main-counter">
+    totalSection.innerHTML = "";
+    totalSection.innerHTML = `<div class = "main-counter">
         <p > ${amount} </p>
         <p class = "found-characters-p"> Total </p>
     </div>`;
