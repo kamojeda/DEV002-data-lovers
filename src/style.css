@@ -404,13 +404,13 @@ footer {
   padding-top: 10px;
 }
 
-footer div {
-/* position: absolute; */
-bottom: 5px;
-width: 90%;
-margin: 0 auto;
-padding-top: 5px;
-border-top: 1px solid var(--secondary-blue);
+footer div{
+  position: relative;
+  bottom: 0px;
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 30px;
+  border-top: 1px solid var(--secondary-blue);
 }
 
 footer p {
@@ -449,6 +449,10 @@ footer p {
   
   .stats-container p {
     font-size: 30px;
+  }
+
+  footer div {
+    padding-top: 20px;
   }
 
   footer div p {
@@ -585,6 +589,10 @@ footer p {
     font-size: bold 12px;
   }
 
+  footer div{
+    padding-top: 10px;
+  }
+
   footer div p {
     padding: 0;
     font-size: 12px;
@@ -643,10 +651,14 @@ footer p {
     padding: 8px;
   }
 
- footer div {
+footer {
+  padding-top: 0;
+}
+
+ /* footer div {
     bottom: 0;
-    padding-bottom: 0px;
-  }
+    padding-top: 10px;
+  } */
 
   footer div p {
     padding: 0;
