@@ -56,3 +56,25 @@ export const filterDescendent = (array) => {
       return descendent;
   }
 }
+
+export const countMale = (elements) => {
+  if (elements === undefined) {
+    throw new TypeError('data is undefined')
+  } else if (elements === null) {
+    throw new TypeError('null values')
+  } else {
+    let male = elements.filter((character) => character.gender == "Male").length;
+    return male;
+  }
+}
+
+export const countFemale = (elements) => {
+  if (elements === undefined) {
+    throw new TypeError('data is undefined')
+  } else if (elements === null) {
+    throw new TypeError('null values')
+  } else {
+    let female = elements.filter((character) => character.gender == "Female").length;
+    return female;
+  }
+}

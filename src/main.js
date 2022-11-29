@@ -4,6 +4,8 @@ import {
     filterCompare,
     filterAscendent,
     filterDescendent,
+    countMale,
+    countFemale,
 } from "./data.js";
 
 import data from "./data/harrypotter/data.js";
@@ -41,10 +43,8 @@ seeCharactersButton.addEventListener("click", () => {
 
 function printElements(elements) {
     printTotalAmountCharacters(elements.length);
-    printTotalAmountMaleCharacters(
-        elements.filter((character) => character.gender == "Male").length);
-    printTotalAmountFemaleCharacters(
-        elements.filter((character) => character.gender == "Female").length);
+    printTotalAmountMaleCharacters(countMale(elements));
+    printTotalAmountFemaleCharacters(countFemale(elements));
     createCharacterCard(elements);
 }
 
@@ -103,13 +103,13 @@ function printTotalAmountCharacters(amount) {
 function printTotalAmountMaleCharacters(amount) {
     maleSection.innerHTML = "";
     maleSection.innerHTML = `<div class = "male-counter">
-        <p> ${amount} Male characters found</p>
+        <p> ${amount} male characters found</p>
     </div>`;
 }
 
 function printTotalAmountFemaleCharacters(amount) {
     femaleSection.innerHTML = "";
     femaleSection.innerHTML = `<div class = "female-counter">
-        <p> ${amount} Female characters found</p>
+        <p> ${amount} female characters found</p>
     </div>`;
 }
