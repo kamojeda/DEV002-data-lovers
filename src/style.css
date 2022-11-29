@@ -301,7 +301,6 @@ nav ul li ul a:hover {
   transition: all 300ms ease;
 }
 
-<<<<<<< HEAD
 .container-counter-characters {
   height: 200px;
   width: 100%;
@@ -321,22 +320,6 @@ nav ul li ul a:hover {
   font-family: var(--secondary-font);
   box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
   border-radius: 10px;
-=======
-.stats-container {
-  width: 90%;
-  margin: 0 auto;
-  padding-top: 30px;
-  border-top: 1px solid var(--secondary-blue);
-}
-
-.stats-container p {
-  font-family: var(--secondary-font);
-  font-size: 34px;
-  font-weight: lighter;
-  text-align: center;
-  /* text-decoration: underline dotted; */
-  color: var(--content-color);
->>>>>>> Se agregan estilos para menus desplegables, contador y cards en responsive
 }
 
 .charactersList {
@@ -404,13 +387,12 @@ footer {
   padding-top: 10px;
 }
 
-footer div{
-  position: relative;
-  bottom: 0px;
-  width: 90%;
-  margin: 0 auto;
-  padding-top: 30px;
-  border-top: 1px solid var(--secondary-blue);
+footer div {
+bottom: 5px;
+width: 90%;
+margin: 0 auto;
+padding-top: 5px;
+border-top: 1px solid var(--secondary-blue);
 }
 
 footer p {
@@ -449,10 +431,6 @@ footer p {
   
   .stats-container p {
     font-size: 30px;
-  }
-
-  footer div {
-    padding-top: 20px;
   }
 
   footer div p {
@@ -589,10 +567,6 @@ footer p {
     font-size: bold 12px;
   }
 
-  footer div{
-    padding-top: 10px;
-  }
-
   footer div p {
     padding: 0;
     font-size: 12px;
@@ -651,9 +625,10 @@ footer p {
     padding: 8px;
   }
 
-footer {
-  padding-top: 0;
-}
+ footer div {
+    bottom: 0;
+    padding-bottom: 0px;
+  }
 
   footer div p {
     padding: 0;

@@ -82,17 +82,7 @@ function createCharacterCard(elements) {
         li.appendChild(span);
         span.appendChild(i);
         li.appendChild(p);
-<<<<<<< HEAD
     });
-=======
-    })
-
-    statsSection.innerHTML = '';
-    statsSection.innerHTML = 
-    `<div class = "stats-container">
-        <p> ${stats} characters found</p>
-    </div>`
->>>>>>> Se agregan estilos para menus desplegables, contador y cards en responsive
 }
 
 function searchRealTime() {
@@ -102,19 +92,6 @@ function searchRealTime() {
     printElements(elements);
 }
 
-<<<<<<< HEAD
-function closeSearch() {
-    searchInput.value = "";
-    list.innerHTML = "";
-    printElements(getCharactersFrom(data));
-}
-function printTotalAmountCharacters(amount) {
-    statsSection.innerHTML = "";
-    statsSection.innerHTML = `<div class = "main-counter">
-        <p> ${amount} characters found</p>
-    </div>`;
-}
-=======
 orderAscendent.addEventListener("click", () => {
     list.innerHTML = '';
     listElements(filterAscendent(charactersNameHouse));
@@ -126,7 +103,6 @@ orderDescendent.addEventListener("click", () => {
 });
 
 searchClose.addEventListener("click", closeSearch);
->>>>>>> Se agregan estilos para menus desplegables, contador y cards en responsive
 
 function printTotalAmountMaleCharacters(amount) {
     maleSection.innerHTML = "";
@@ -135,17 +111,9 @@ function printTotalAmountMaleCharacters(amount) {
     </div>`;
 }
 
-<<<<<<< HEAD
-function printTotalAmountFemaleCharacters(amount) {
-    femaleSection.innerHTML = "";
-    femaleSection.innerHTML = `<div class = "female-counter">
-        <p> ${amount} Female characters found</p>
-    </div>`;
-=======
 function closeSearch () {
     searchInput.value = '';
     list.innerHTML = '';
     statsSection.innerHTML = '';
     // listElements(characters(data));
->>>>>>> Se agregan estilos para menus desplegables, contador y cards en responsive
 }
