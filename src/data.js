@@ -1,4 +1,4 @@
-export const characters = (data) => {
+export const getCharactersFrom = (data) => {
   if (data === undefined) {
     throw new TypeError('data is undefined')
   } else if (data === null) {
