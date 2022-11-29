@@ -334,10 +334,25 @@ nav ul li ul a:hover {
   transition: all 300ms ease;
 }
 
-.stats-info {
-  padding-top: 20px;
-  font-size: 54px;
-  text-align: center;
+.container-counter-characters {
+  height: 200px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.counter{
+  height: 100px;
+  width: 170px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 20px;
+  font-family: var(--secondary-font);
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
+  border-radius: 10px;
 }
 
 .charactersList {
