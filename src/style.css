@@ -301,24 +301,43 @@ nav ul li ul a:hover {
 }
 
 .container-counter-characters {
-  height: 200px;
+  height: 50px;
   width: 100%;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction:row;
+  justify-content: center;
+  gap: 15px;
+  
 }
 
-.counter{
-  height: 100px;
-  width: 170px;
+.counter {
+  height: 50px;
+  width: 70px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  text-align: center;
   flex-direction: column;
-  font-size: 20px;
-  font-family: var(--secondary-font);
-  box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
-  border-radius: 10px;
+  flex-wrap: wrap;
+  font-size: 30px;
+  font-family: var(--titles-font);
+  border-radius: 20px;
+}
+
+.main-counter {
+  color: var(--slytherin-color);
+}
+
+.female-counter {
+  color: var(--hufflepuff-color)
+}
+
+.male-counter {
+  color: var(--ravenclaw-color);
+}
+
+.found-characters-p {
+  font-size: 15px;
+
 }
 
 .charactersList {
