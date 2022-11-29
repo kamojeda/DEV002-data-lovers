@@ -15,7 +15,7 @@ export const createArrayObjects = (data) => {
     throw new TypeError('data is null')
   } else {
     let filtered = data.characters;
-    let finalArray = filtered.map( (element) => ({name: element.name, house: element.house}))
+    let finalArray = filtered.map( (element) => ({name: element.name, house: element.house, gender: element.gender}))
     return finalArray;
   }
 };
