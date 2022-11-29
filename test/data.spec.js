@@ -1,4 +1,4 @@
-import {getCharactersFrom, createArrayObjects, filterCompare, filterAscendent, filterDescendent} from '../src/data.js';
+import {getCharactersFrom, createArrayObjects, filterCompare, filterAscendent, filterDescendent, countMale, countFemale} from '../src/data.js';
 
 const data = 
   {
@@ -324,4 +324,35 @@ describe("filter characters in descendent sort", () => {
     expect(() => filterDescendent(undefined)).toThrow(TypeError);
     expect(() => filterDescendent(null)).toThrow(TypeError);
   });
+});
+
+describe ("countMale", () => {
+  it('is a function', () => {
+    expect(typeof(countMale)).toBe('function');
+  });
+
+  it('should returns 3', () => {
+    expect(countMale(data.characters)).toBe(3)
+  });
+
+  it('should throw TypeError when invoked with wrong argument types', () => {
+    expect(() => countMale(undefined)).toThrow(TypeError);
+    expect(() => countMale(null)).toThrow(TypeError);
+  })
+
+});
+
+describe ("countFemale", () => {
+  it('is a function', () => {
+    expect(typeof(countFemale)).toBe('function');
+  });
+
+  it('should returns 2', () => {
+    expect(countFemale(data.characters)).toBe(2)
+  });
+
+  it('should throw TypeError when invoked with wrong argument types', () => {
+    expect(() => countFemale(undefined)).toThrow(TypeError);
+    expect(() => countFemale(null)).toThrow(TypeError);
+  })
 });
