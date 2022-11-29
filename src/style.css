@@ -33,14 +33,6 @@ main {
   flex-direction: column;
 }
 
-h2 {
-  font-size: 45px;
-  text-align: center;
-  font-family: var(--titles-font);
-  color: var(--titles-color);
-  margin-bottom: 20px;
-}
-
 .navbar {
   width: 100%;
   height: 100px;
@@ -70,6 +62,14 @@ h2 {
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
+}
+
+h2 {
+  font-size: 45px;
+  text-align: center;
+  font-family: var(--titles-font);
+  color: var(--titles-color);
+  margin-bottom: 20px;
 }
 
 .description-text {
@@ -118,23 +118,6 @@ h2 {
   font-family: var(--secondary-font);
   font-size: 22px;
 }
-  /* display: flex;
-  height: auto;
-  width: auto;
-  padding: 13px 80px;
-  position: relative;
-  margin-top: -10px;
-  margin-left: auto;
-  margin-right:auto;
-  text-align: center;
-}
-*/
-
-/* .see-all-characters:hover {
-  font-size: 25px;
-  transform: scale(1, 1);
-  cursor: pointer;
-} */
 
 .search-wrapper {
   height: auto;
@@ -200,27 +183,6 @@ h2 {
   color: var(--main-color);
 }
 
-footer {
-    width: 100%;
-    height: 10%;
-    bottom: 0px;
-    position:relative;
-}
-
-footer div {
-  position: absolute;
-  padding-bottom: 10px;
-  bottom: 5px;
-  width: 100%;
-}
-
-footer p {
-    text-align: center;
-    font-family: var(--secondary-font);
-    font-size: 16px;
-    font-weight: lighter;
-    color: var(--content-color);
-}
 
 .container-menu {
   width: 100%;
@@ -236,8 +198,9 @@ footer p {
   position: relative;
 }
 
-nav {
+.nav-menu nav {
   height: 100%;
+  padding-bottom: 10px;
 }
 
 nav > ul {
@@ -289,7 +252,7 @@ nav ul li ul {
   text-align: left;
   display: flex;
   flex-direction: column;
-  position: absolute;
+  position: relative;
   padding: 5px 5px;
   font-size: 20px;
   font-family: var(--titles-font);
@@ -302,6 +265,10 @@ nav ul li ul {
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
   z-index: 2;
   transition: all 100ms ease;
+}
+
+nav ul li ul li {
+  border-bottom: 1px solid var(--secondary-blue);
 }
 
 nav ul li:hover ul {
@@ -334,6 +301,7 @@ nav ul li ul a:hover {
   transition: all 300ms ease;
 }
 
+<<<<<<< HEAD
 .container-counter-characters {
   height: 200px;
   width: 100%;
@@ -353,6 +321,22 @@ nav ul li ul a:hover {
   font-family: var(--secondary-font);
   box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
   border-radius: 10px;
+=======
+.stats-container {
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 30px;
+  border-top: 1px solid var(--secondary-blue);
+}
+
+.stats-container p {
+  font-family: var(--secondary-font);
+  font-size: 34px;
+  font-weight: lighter;
+  text-align: center;
+  /* text-decoration: underline dotted; */
+  color: var(--content-color);
+>>>>>>> Se agregan estilos para menus desplegables, contador y cards en responsive
 }
 
 .charactersList {
@@ -382,7 +366,7 @@ nav ul li ul a:hover {
 .card-element:hover {
   transform: scale(1.2, 1.2);
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
-  background-color: var(--secondary-blue);
+  background-color: var(--content-color);
   cursor: pointer;
 }
 
@@ -412,6 +396,31 @@ nav ul li ul a:hover {
   font-size: bold 15px;
 }
 
+footer {
+  width: 100%;
+  height: 10%;
+  bottom: 0px;
+  position:relative;
+  padding-top: 10px;
+}
+
+footer div {
+/* position: absolute; */
+bottom: 5px;
+width: 90%;
+margin: 0 auto;
+padding-top: 5px;
+border-top: 1px solid var(--secondary-blue);
+}
+
+footer p {
+  text-align: center;
+  font-family: var(--secondary-font);
+  font-size: 16px;
+  font-weight: lighter;
+  color: var(--content-color);
+}
+
 @media only screen and (max-width: 700px) {
   .description-text {
     margin: 10px 10%;
@@ -434,6 +443,13 @@ nav ul li ul a:hover {
     font-size: 20px;
   }
 
+  .stats-container {
+    padding-top: 20px;
+  }
+  
+  .stats-container p {
+    font-size: 30px;
+  }
 
   footer div p {
     font-size: 12px;
@@ -513,7 +529,6 @@ nav ul li ul a:hover {
   }
 
   .nav-menu {
-    /* max-width: 1000px; */
     max-width: 400px;
     margin: 10px;
     height: 50%;
@@ -521,7 +536,6 @@ nav ul li ul a:hover {
 
   nav > ul > li > div > a {
     width: 75px;
-    /* max-width: 992px; */
     margin: 0 auto;
     padding: 10px 5px;
     font-size: 17px;
@@ -543,28 +557,28 @@ nav ul li ul a:hover {
     font-size: 17px;
   }
   
-
-  .charactersList {
-    width: 100%;
-    max-height: 70%;
-    margin: 10px auto;
+  .stats-container {
+    padding-top: 15px;
+  }
+  
+  .stats-container p {
+    font-size: 25px;
   }
 
   .card-element {
-    width: 130px;
-    height: 130px;
-    margin: 10px;
+    width: 100px;
+    height: 110px;
+    margin: 8px;
   }
 
   #span-i {
-    padding: 15px;
-    padding-bottom: 7px;
-    font-size: 30px;
+    padding: 24px 5px 8px;
+    font-size: 25px;
   }
 
   .card-p {
-    font-size: bold 10px;
-    margin-bottom: 5px;
+    font-size: 15px;
+    padding: 5px;
   }
 
   .card-p:hover {
@@ -585,7 +599,7 @@ nav ul li ul a:hover {
 
   .see-all-characters {
     padding: 8px 25px;
-}
+  }
 
   .nav-menu {
     max-width: 300px;
@@ -597,9 +611,39 @@ nav ul li ul a:hover {
     margin: 0 auto;
     padding: 5px;
     font-size: 12px;
-}
+  }
 
-  footer div {
+  nav ul li ul a {
+    padding: 5px;
+    font-size: 12px;
+  }
+
+  .stats-container {
+    padding-top: 10px;
+  }
+
+  .stats-container p {
+    font-size: 20px;
+  }
+
+  .card-element {
+    width: 80px;
+    height: 100px;
+    margin: 5px;
+  }
+
+  #span-i {
+    padding: 20px;
+    padding-bottom: 5px;
+    font-size: 20px;
+  }
+
+  .card-p {
+    font-size: 10px;
+    padding: 8px;
+  }
+
+ footer div {
     bottom: 0;
     padding-bottom: 0px;
   }
