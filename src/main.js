@@ -96,20 +96,23 @@ function cleanDisplay() {
 function printTotalAmountCharacters(amount) {
     statsSection.innerHTML = "";
     statsSection.innerHTML = `<div class = "main-counter">
-        <p> ${amount} characters found</p>
+        <p > ${amount} </p>
+        <p class = "found-characters-p"> Total </p>
     </div>`;
 }
 
 function printTotalAmountMaleCharacters(amount) {
     maleSection.innerHTML = "";
     maleSection.innerHTML = `<div class = "male-counter">
-        <p> ${amount} male characters found</p>
+        <p> ${amount} </p>
+        <p class = "found-characters-p"> Male</p>
     </div>`;
 }
 
 function printTotalAmountFemaleCharacters(amount) {
     femaleSection.innerHTML = "";
     femaleSection.innerHTML = `<div class = "female-counter">
-        <p> ${amount} female characters found</p>
+        <p> ${amount} </p>
+        <p class = "found-characters-p"> Female</p>
     </div>`;
 }
