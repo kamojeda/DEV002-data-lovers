@@ -166,23 +166,22 @@ h2 {
   outline: none;
 }
 
-.close-search {
+.clean-button {
   height: 40px;
   background-color: var(--secondary-blue);
   border: none;
 }
 
-.close-search i {
+.clean-button i {
   font-size: 20px;
   padding: 12px 15px;
   color: var(--titles-color);
 }
 
-.close-search i:hover {
+.clean-button i:hover {
   cursor: pointer;
   color: var(--main-color);
 }
-
 
 .container-menu {
   width: 100%;
@@ -391,7 +390,7 @@ footer div {
 bottom: 5px;
 width: 90%;
 margin: 0 auto;
-padding-top: 5px;
+padding-top: 30px;
 border-top: 1px solid var(--secondary-blue);
 }
 
@@ -431,6 +430,10 @@ footer p {
   
   .stats-container p {
     font-size: 30px;
+  }
+
+  footer div {
+    padding-top: 20px;
   }
 
   footer div p {
@@ -505,7 +508,7 @@ footer p {
     margin: 0 auto;
   }
 
-  .close-search i {
+  .clean-button i {
     font-size: 17px;
     padding: 10px 13px;
   }
@@ -567,6 +570,10 @@ footer p {
     font-size: bold 12px;
   }
 
+  footer div {
+    padding-top: 15px;
+  }
+
   footer div p {
     padding: 0;
     font-size: 12px;
@@ -626,8 +633,7 @@ footer p {
   }
 
  footer div {
-    bottom: 0;
-    padding-bottom: 0px;
+    padding-top: 5px;
   }
 
   footer div p {

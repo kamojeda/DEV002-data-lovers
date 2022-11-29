@@ -5,10 +5,11 @@ import {
     filterAscendent,
     filterDescendent,
 } from "./data.js";
+
 import data from "./data/harrypotter/data.js";
 
 const searchInput = document.getElementById("search-character");
-const searchClose = document.getElementById("search-closeButton");
+const clean = document.getElementById("clean-button");
 const seeCharactersButton = document.getElementById("see all characters");
 
 let statsSection = document.getElementById("main-counter");
@@ -20,7 +21,7 @@ let orderDescendent = document.getElementById("filterDescendent");
 
 let charactersNameHouse = createArrayObjects(data);
 
-searchClose.addEventListener("click", closeSearch);
+clean.addEventListener("click", cleanDisplay);
 searchInput.addEventListener("keyup", searchRealTime);
 
 orderAscendent.addEventListener("click", () => {
@@ -31,11 +32,6 @@ orderAscendent.addEventListener("click", () => {
 orderDescendent.addEventListener("click", () => {
     list.innerHTML = "";
     printElements(filterDescendent(charactersNameHouse));
-});
-
-searchClose.addEventListener("click", () => {
-    searchInput.value = "";
-    printElements(getCharactersFrom(data));
 });
 
 seeCharactersButton.addEventListener("click", () => {
@@ -92,17 +88,17 @@ function searchRealTime() {
     printElements(elements);
 }
 
-orderAscendent.addEventListener("click", () => {
-    list.innerHTML = '';
-    listElements(filterAscendent(charactersNameHouse));
-});
+function cleanDisplay() {
+    searchInput.value = "";
+    list.innerHTML = "";
+}
 
-orderDescendent.addEventListener("click", () => {
-    list.innerHTML = '';
-    listElements(filterDescendent(charactersNameHouse));
-});
-
-searchClose.addEventListener("click", closeSearch);
+function printTotalAmountCharacters(amount) {
+    statsSection.innerHTML = "";
+    statsSection.innerHTML = `<div class = "main-counter">
+        <p> ${amount} characters found</p>
+    </div>`;
+}
 
 function printTotalAmountMaleCharacters(amount) {
     maleSection.innerHTML = "";
@@ -111,9 +107,9 @@ function printTotalAmountMaleCharacters(amount) {
     </div>`;
 }
 
-function closeSearch () {
-    searchInput.value = '';
-    list.innerHTML = '';
-    statsSection.innerHTML = '';
-    // listElements(characters(data));
+function printTotalAmountFemaleCharacters(amount) {
+    femaleSection.innerHTML = "";
+    femaleSection.innerHTML = `<div class = "female-counter">
+        <p> ${amount} Female characters found</p>
+    </div>`;
 }

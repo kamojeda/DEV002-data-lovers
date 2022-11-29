@@ -61,7 +61,7 @@
               placeholder="Search by name"
             />
           </div>
-          <button id="search-closeButton" class="close-search" type="button">
+          <button id="clean-button" class="clean-button" type="button">
             <i class="fa-solid fa-xmark"></i>
           </button>
         </form>
@@ -182,7 +182,10 @@
           </nav>
         </div>
       </section>
-      <section id="stats-info">
+      <section class="container-counter-characters">
+        <div id="main-counter" class="characters-counter counter"></div>
+        <div id="male-counter" class="male-counter counter"></div>
+        <div id="female-counter" class="female-counter counter"></div>
       </section>
       <section class="cards">
         <div>
@@ -197,7 +200,6 @@
         <p>Laboratoria: cohort DEV002</p>
       </div>
     </footer>
-    <!-- <div id="root"></div> -->
     <script src="main.js" type="module"></script>
   </body>
 </html>
