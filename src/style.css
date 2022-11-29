@@ -560,11 +560,7 @@ footer p {
     font-size: 17px;
   }
   
-  .stats-container {
-    padding-top: 15px;
-  }
-  
-  .stats-container p {
+  .counter {
     font-size: 25px;
   }
 
@@ -624,13 +620,12 @@ footer p {
     padding: 5px;
     font-size: 12px;
   }
-
-  .stats-container {
-    padding-top: 10px;
+  .counter {
+    font-size: 20px;
   }
 
-  .stats-container p {
-    font-size: 20px;
+  .found-characters-p {
+    font-size: 12px;
   }
 
   .card-element {
