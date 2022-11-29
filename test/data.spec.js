@@ -1,4 +1,4 @@
-import {characters, createArrayObjects, filterCompare, filterAscendent, filterDescendent} from '../src/data.js';
+import {getCharactersFrom, createArrayObjects, filterCompare, filterAscendent, filterDescendent} from '../src/data.js';
 
 const data = 
   {
@@ -111,18 +111,18 @@ const data =
     }
   ]
 
-describe('characters', () => {
+describe('getCharactersFrom', () => {
   it('is a function', () => {
-    expect(typeof(characters)).toBe('function');
+    expect(typeof(getCharactersFrom)).toBe('function');
   });
 
   it('should return array length 5', () => {
-    expect(characters(data)).toHaveLength(5);
+    expect(getCharactersFrom(data)).toHaveLength(5);
   })
 
   it('should throw TypeError when invoked with wrong argument types', () => {
-    expect(() => characters(undefined)).toThrow(TypeError);
-    expect(() => characters(null)).toThrow(TypeError);
+    expect(() => getCharactersFrom(undefined)).toThrow(TypeError);
+    expect(() => getCharactersFrom(null)).toThrow(TypeError);
   })
 });
 

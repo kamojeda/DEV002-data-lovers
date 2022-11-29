@@ -5,10 +5,11 @@ import {
     filterAscendent,
     filterDescendent,
 } from "./data.js";
+
 import data from "./data/harrypotter/data.js";
 
 const searchInput = document.getElementById("search-character");
-const searchClose = document.getElementById("search-closeButton");
+const clean = document.getElementById("clean-button");
 const seeCharactersButton = document.getElementById("see all characters");
 
 let statsSection = document.getElementById("main-counter");
@@ -20,7 +21,7 @@ let orderDescendent = document.getElementById("filterDescendent");
 
 let charactersNameHouse = createArrayObjects(data);
 
-searchClose.addEventListener("click", closeSearch);
+clean.addEventListener("click", cleanDisplay);
 searchInput.addEventListener("keyup", searchRealTime);
 
 orderAscendent.addEventListener("click", () => {
@@ -31,11 +32,6 @@ orderAscendent.addEventListener("click", () => {
 orderDescendent.addEventListener("click", () => {
     list.innerHTML = "";
     printElements(filterDescendent(charactersNameHouse));
-});
-
-searchClose.addEventListener("click", () => {
-    searchInput.value = "";
-    printElements(getCharactersFrom(data));
 });
 
 seeCharactersButton.addEventListener("click", () => {
@@ -92,11 +88,11 @@ function searchRealTime() {
     printElements(elements);
 }
 
-function closeSearch() {
+function cleanDisplay() {
     searchInput.value = "";
     list.innerHTML = "";
-    printElements(getCharactersFrom(data));
 }
+
 function printTotalAmountCharacters(amount) {
     statsSection.innerHTML = "";
     statsSection.innerHTML = `<div class = "main-counter">
