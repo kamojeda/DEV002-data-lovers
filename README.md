@@ -563,7 +563,7 @@ Para el deploy, cada una lo realizó desde su repositorio remoto.
 ### 👩🏻‍💻 Kamila Ojeda
 
 * GitHub: [kamojeda/DEV002-data-lovers](https://github.com/kamojeda/DEV002-data-lovers)
-* Deploy: [✨Harry Potter's Wizarding World✨]()
+* Deploy: [✨Harry Potter's Wizarding World✨](https://kamojeda.github.io/DEV002-data-lovers/)
 
 ### 👩🏻‍💻 Berenice Hernández
 
