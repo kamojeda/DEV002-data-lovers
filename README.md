@@ -261,7 +261,7 @@ En este archivo va el contenido que se mostrará al usuario (la maquetación).
 
 ![](./imgREADME/details.PNG)
 
-        <section class="button-wraper">: es el contenedor del boton con el que se muestran todos los personajes.
+        <section class="button-meet-all-characters">: es el contenedor del boton con el que se muestran todos los personajes.
 
 ![](./imgREADME/button.PNG)
 
