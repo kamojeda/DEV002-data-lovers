@@ -225,7 +225,7 @@ Luego de varias horas, nuestros primeros prototipos en [Figma](https://www.figma
 
 ![Prototipo en Figma de: Pantalla Books/Libro 1](./imgREADME/Prototipo_alta.png)
 
-Finalmente como ultima evolución de nuestro prototipo, se agregó una sección para mostar los contadores, mismos que nos ayudarian a completar los oobjetivos de aprendizaje.
+Finalmente como ultima evolución de nuestro prototipo, se agregó una sección para mostar los contadores, mismos que nos ayudarian a completar los objetivos de aprendizaje.
 
 ![](./imgREADME/final_protoype.PNG)
 ## **5. Flujo de trabajo Git y GitHub**
