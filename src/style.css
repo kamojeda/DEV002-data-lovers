@@ -52,6 +52,30 @@ main {
   cursor: pointer;
 }
 
+.hover-text-navbar:before {
+  content: attr(data-hover);
+  visibility: hidden;
+  opacity: 0;
+  width: 100px;
+  background-color: var(--secondary-blue);
+  color: var(--titles-color);
+  text-align: center;
+  border-radius: 20px;
+  padding: 5px;
+  transition: opacity 0.7s ease-in-out;
+  position: absolute;
+  z-index: 1;
+  left: 1%;
+  top: 10%;
+  font-family: var(--titles-font);
+  font-size: 15px;
+}
+
+.hover-text-navbar:hover:before {
+  opacity: 1;
+  visibility: visible;
+}
+
 .navbar .logo {
   width: 100px;
   height: 100px;
@@ -93,7 +117,7 @@ h2 {
   background-size: contain;
 }
 
-.button-wraper {
+.button-meet-all-characters {
   height: auto;
   width: 90%;
   max-width: 400px;
@@ -103,12 +127,14 @@ h2 {
   position: static;
 }
 
-.see-all-characters {
+.button-meet-all-characters button {
   height: auto;
   width: 100%;
+  max-width: 400px;
+  min-width: 250px;
   position: relative;
   overflow: hidden;
-  margin: 0 auto;
+  margin: 5px auto;
   margin-top: -10px;
   padding: 10px 20px;
   border-radius: 30px;
@@ -117,6 +143,10 @@ h2 {
   background-color: var(--hufflepuff-color);
   font-family: var(--secondary-font);
   font-size: 22px;
+}
+
+.button-meet-all-characters button:hover {
+  cursor: pointer;
 }
 
 .search-wrapper {
@@ -191,13 +221,13 @@ h2 {
   background: transparent;
 }
 
-.nav-menu {
+.filters-menu {
   max-width: 1200px;
   margin: 0px;
   position: relative;
 }
 
-.nav-menu nav {
+.filters-menu nav {
   height: 100%;
   padding-bottom: 10px;
 }
@@ -215,11 +245,34 @@ nav > ul > li {
   position: relative;
 }
 
+.hover-text:before {
+  content: attr(data-hover);
+  visibility: hidden;
+  opacity: 0;
+  width: 100px;
+  background-color: var(--secondary-blue);
+  color: var(--titles-color);
+  text-align: center;
+  border-radius: 20px;
+  padding: 5px;
+  transition: opacity 0.7s ease-in-out;
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 110%;
+  font-family: var(--titles-font);
+  font-size: 15px;
+}
+
+.hover-text:hover:before {
+  opacity: 1;
+  visibility: visible;
+}
+
 nav > ul > li > div > a {
   height: 100%;
   width: 120px;
   max-width: 992px;
-  /* margin: 0 10px; */
   padding: 5px 15px;
   display: flex;
   flex-direction: column;
@@ -232,7 +285,7 @@ nav > ul > li > div > a {
   transform: all 300ms ease;
 }
 
-.nav-menu div i {
+.filters-menu div i {
   padding: 15px;
   padding-bottom: 10px;
   font-size: 40px;
@@ -270,7 +323,15 @@ nav ul li ul li {
   border-bottom: 1px solid var(--secondary-blue);
 }
 
-nav ul li:hover ul {
+/* nav ul li:hover ul {
+  display: block;
+  opacity: 1;
+  border-radius: 8px;
+  background-color: var(--main-color);
+  cursor: pointer;
+} */
+
+.list-item-order:hover .list_show_order {
   display: block;
   opacity: 1;
   border-radius: 8px;
@@ -290,7 +351,17 @@ nav ul li ul a {
   background: transparent;
 }
 
-nav ul li ul a:hover {
+/* nav ul li ul a:hover {
+  color: var(--content-color);
+  margin-left: 14px;
+  margin-top: 10px;
+  border-radius: 8px;
+  font-size: 22px;
+  z-index: 1;
+  transition: all 300ms ease;
+} */
+
+.op-order:hover {
   color: var(--content-color);
   margin-left: 14px;
   margin-top: 10px;
@@ -304,7 +375,7 @@ nav ul li ul a:hover {
   height: 50px;
   width: 100%;
   display: flex;
-  flex-direction:row;
+  flex-direction: row;
   justify-content: center;
   gap: 15px;
 }
@@ -327,7 +398,7 @@ nav ul li ul a:hover {
 }
 
 .female-counter {
-  color: var(--hufflepuff-color)
+  color: var(--hufflepuff-color);
 }
 
 .male-counter {
@@ -336,7 +407,6 @@ nav ul li ul a:hover {
 
 .found-characters-p {
   font-size: 15px;
-
 }
 
 .charactersList {
@@ -350,17 +420,17 @@ nav ul li ul a:hover {
 }
 
 .card-element {
-    width:130px;
-    height: 150px;
-    border-radius: 18px;
-    margin: 30px;
-    text-align: center;
-    font-family: var(--secondary-font);
-    font-size: 17px;
-    background-color: var(--titles-color);
-    box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
-    transform-style: preserve-3d;
-    transform: perspective(100px);
+  width: 130px;
+  height: 150px;
+  border-radius: 18px;
+  margin: 30px;
+  text-align: center;
+  font-family: var(--secondary-font);
+  font-size: 17px;
+  background-color: var(--titles-color);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+  transform-style: preserve-3d;
+  transform: perspective(100px);
 }
 
 .card-element:hover {
@@ -400,16 +470,16 @@ footer {
   width: 100%;
   height: 10%;
   bottom: 0px;
-  position:relative;
+  position: relative;
   padding-top: 10px;
 }
 
 footer div {
-bottom: 5px;
-width: 90%;
-margin: 0 auto;
-padding-top: 30px;
-border-top: 1px solid var(--secondary-blue);
+  bottom: 5px;
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 30px;
+  border-top: 1px solid var(--secondary-blue);
 }
 
 footer p {
@@ -431,7 +501,7 @@ footer p {
     height: 50%;
   }
 
-  .see-all-characters {
+  .button-meet-all-characters {
     font-size: 18px;
   }
 
@@ -442,12 +512,10 @@ footer p {
     font-size: 20px;
   }
 
-  .stats-container {
-    padding-top: 20px;
-  }
-  
-  .stats-container p {
-    font-size: 30px;
+  .hover-text:before {
+    width: 85px;
+    border-radius: 15px;
+    font-size: 13px;
   }
 
   footer div {
@@ -495,22 +563,22 @@ footer p {
     display: flex;
   }
 
-  .see-all-characters {
+  .button-meet-all-characters {
     width: 70%;
     height: 30px;
     padding: 8px 30px;
     margin: 5px auto;
     display: flex;
     margin-top: -10px;
-  } 
+  }
 
-  .see-all-characters p {
+  .button-meet-all-characters p {
     margin: 0 auto;
     font-size: 14px;
   }
 
-  .see-all-characters :hover {
-    font-size: 18px; 
+  .button-meet-all-characters:hover {
+    font-size: 15px;
     transform: scale(1, 1);
     cursor: pointer;
   }
@@ -531,7 +599,7 @@ footer p {
     padding: 10px 13px;
   }
 
-  .nav-menu {
+  .filters-menu {
     max-width: 400px;
     margin: 10px;
     height: 50%;
@@ -544,7 +612,7 @@ footer p {
     font-size: 17px;
   }
 
-  .nav-menu div i {
+  .filters-menu div i {
     padding: 5px;
     font-size: 30px;
   }
@@ -559,7 +627,14 @@ footer p {
   nav ul li ul a:hover {
     font-size: 17px;
   }
-  
+
+  .hover-text:before {
+    width: 75px;
+    border-radius: 17px;
+    padding: 7px;
+    font-size: 12px;
+  }
+
   .counter {
     font-size: 25px;
   }
@@ -595,16 +670,15 @@ footer p {
 }
 
 @media only screen and (max-width: 350px) {
-
   .description-text {
     display: none;
   }
 
-  .see-all-characters {
+  .button-meet-all-characters {
     padding: 8px 25px;
   }
 
-  .nav-menu {
+  .filters-menu {
     max-width: 300px;
     margin: 5px;
   }
@@ -620,6 +694,14 @@ footer p {
     padding: 5px;
     font-size: 12px;
   }
+
+  .hover-text:before {
+    width: 70px;
+    border-radius: 15px;
+    padding: 3px;
+    font-size: 10px;
+  }
+
   .counter {
     font-size: 20px;
   }
@@ -645,7 +727,7 @@ footer p {
     padding: 8px;
   }
 
- footer div {
+  footer div {
     padding-top: 5px;
   }
 
@@ -653,5 +735,4 @@ footer p {
     padding: 0;
     font-size: 10px;
   }
-
 }
